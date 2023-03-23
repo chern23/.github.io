@@ -4,14 +4,21 @@
    text-decoration: none;
 }
 
+/** a:active {
+   color: #003B5A;
+   text-decoration: none;
+}*/
+
+* a:visited {
+   color: #003B5A;
+}
+
 * a:hover {
    /*text-decoration: underline;*/
    color: #5e9acb; 
 }
 
-*a:visited {
-   color: #730202;
-}
+/* fix links sudhflsdls */
 
 /* -- MAIN DISPLAY PAGES -- */
 
@@ -30,6 +37,18 @@ header {
     text-align: center;
     padding: 20px 10px;
     color: #730202;
+    text-shadow: 1px 1px rgb(57 57 62 / 72%);
+}
+
+/* May remove border */
+#title-page {
+   border: 3px #730202;
+   border-style: dashed dotted dotted dashed;
+   padding-top: 15px;
+   padding-left: 10px;
+   padding-right: 10px;
+   display: inline;
+   
 }
 
 nav ul {
@@ -57,40 +76,28 @@ nav ul {
    align-items: center;
    justify-content: center;
    flex: wrap;
-   max-width: 100%;
+   max-width: 500px;
    height: auto;
-   object-fit: scale-down;
+   width: auto;
+   margin: auto;
+   /*object-fit: scale-down;*/
  }
 
 
+img {
+   max-width: 100%;
+}
 
 
-
-/* COUNT$RY PAGES */
+/* COUNTRY PAGES */
 
 
 section ul {
    list-style: none;
+   width: auto;
 
 }
 
-.countries {
-   width:auto;
-}
-
-.text {
-   color:#003B5A;
-   /*border: 1px black solid;*/
-   font-size: 20px;
-   padding-left: 20px;
-   margin-right: auto;
-   text-align: left;
-   font-style: normal;
-   margin-left: none;
-   margin-right: auto;
-   text-align: left;
-   width: 50%;
-}
 
 /*.blurb {
    font-style: normal;
@@ -101,18 +108,176 @@ section ul {
    font-size: smaller;
 }*/
 
-.display-image {
+/*.display-image {
    display: flex;
    align-items: center;
    justify-content: center;
    flex: wrap;
-}
+}*/
 
+/* Below Image side by Text */
+
+.text {
+   width: 100%;
+   display: table;
+   table-layout: fixed;
+ }
+
+ .text,
+ .display-image {
+   display: table-cell;
+   vertical-align: middle;
+ }
+
+ .display-image img {
+   max-width: 100%;
+   height: auto;
+ }
+
+
+/*  Blurb  */
+
+ .text {
+   width: 60%;
+   padding: 15px;
+ }
+
+.text {
+   color:#003B5A;
+   /*border: 1px black solid;*/
+   font-size: 30px;
+   padding-left: 20px;
+   text-align: left;
+   font-style: normal;
+   margin-left: none;
+   margin-right: auto;
+   text-align: left;
+   width: 50%;
+}
 
 .page-title {
    font-family: 'Delius Unicase';
    font-size: smaller;
+   /*color: #730202;*/
 }
+
+
+/*  Text Overlay on Image  */
+
+.hover-img {
+   background-color: #000;
+   color: #fff;
+   display: inline-block;
+   margin: 8px;
+   /*max-width: 320px;
+   min-width: 240px;*/
+   overflow: hidden;
+   position: relative;
+   text-align: center;
+   width: 100%;
+ }
+ 
+ .hover-img * {
+   box-sizing: border-box;
+   transition: all 0.45s ease;
+ }
+ 
+ .hover-img::before,
+ .hover-img::after {
+   background-color: rgba(0, 0, 0, 0.5);
+   border-top: 32px solid rgba(0, 0, 0, 0.5);
+   border-bottom: 32px solid rgba(0, 0, 0, 0.5);
+   position: absolute;
+   top: 0;
+   bottom: 0;
+   left: 0;
+   right: 0;
+   content: '';
+   transition: all 0.3s ease;
+   z-index: 1;
+   opacity: 0;
+   transform: scaleY(2);
+ }
+ 
+ .hover-img img {
+   vertical-align: top;
+   max-width: 100%;
+   backface-visibility: hidden;
+   /*padding: 20px;*/
+ }
+ 
+ .hover-img figcaption {
+   position: absolute;
+   top: 0;
+   bottom: 0;
+   left: 0;
+   right: 0;
+   align-items: center;
+   z-index: 1;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   line-height: 1.1em;
+   opacity: 0;
+   z-index: 2;
+   transition-delay: 0.1s;
+   font-size: 20px;
+   font-family: 'Delius Unicase';
+   font-weight: 400;
+   letter-spacing: 1px;
+   text-transform: uppercase;
+   color: #dce1e4;
+ }
+ 
+ .hover-img:hover::before,
+ .hover-img:hover::after {
+   transform: scale(1);
+   opacity: 1;
+ }
+ 
+ .hover-img:hover > img {
+   opacity: 0.7;
+ }
+ 
+ .hover-img:hover figcaption {
+   opacity: 1;
+ }
+
+
+ /*  Page Divider */
+
+ hr.solid {
+   border-top: 3px solid #730202;
+   margin: 50px;
+ }
+
+
+
+/* -- PHOTO GALLERY -- */
+
+.container {
+   display: flex;
+   flex-wrap: wrap;
+   align-items: flex-start;
+   flex-direction: row;
+   max-height: 40vh;
+   padding: 60px 40px;
+}
+
+.container img {
+   margin: 10px;
+   border: 2px solid #434A54;
+   box-shadow: 3px 3px 8px 0px rgba(0,0,0,0.3); 
+   max-width: 40vw;
+   justify-items: center;
+}
+
+.gallery-title {
+   color: #003B5A;
+   text-align: center;
+   text-decoration: overline #730202;
+}
+
 
 
 /* -- TABLE -- */
@@ -141,7 +306,7 @@ table, tbody {
 }
 
 
-/* -- FOOTER -- */
+/* -- FOOTER -- does this need to be on every page? */
 
  footer {
     font-size: 30px;
