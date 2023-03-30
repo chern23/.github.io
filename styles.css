@@ -18,7 +18,6 @@
    color: #5e9acb; 
 }
 
-/* fix links sudhflsdls */
 
 /* -- MAIN DISPLAY PAGES -- */
 
@@ -27,20 +26,27 @@ body {
     /*font-family: 'Delius Unicase', serif;*/
     font-family: 'Reenie Beanie';
     font-size: 60px;
-    text-decoration-color: #434A54;
+    text-decoration-color: #171a1e;
     text-decoration-line: none;
     padding: 0;
-    /*margin: 0;*/
+    /*margin: 0;
+    display: block;*/
 }
 
 header {
     text-align: center;
     padding: 20px 10px;
     color: #730202;
-    text-shadow: 1px 1px rgb(57 57 62 / 72%);
+    /*text-shadow: 1px 1px rgb(57 57 62 / 72%);*/
+    padding-bottom: 0px;
 }
 
-/* May remove border */
+.navigation {
+   font-weight: bold;
+}
+
+/* -- INDEX PAGE -- */
+
 #title-page {
    border: 3px #730202;
    border-style: dashed dotted dotted dashed;
@@ -48,11 +54,27 @@ header {
    padding-left: 10px;
    padding-right: 10px;
    display: inline;
+   text-shadow: 1px 1px rgb(57 57 62 / 72%);
    
 }
 
+#title-cover img {
+   display: block;
+   margin-left: auto;
+   margin-right: auto;
+   width: 50%;
+}
+
+.cover-caption {
+   text-align: center;
+   text-decoration-color: #171a1e;
+   font-size: 35px;
+   padding-bottom: 15px;
+   padding-top: 0;
+   font-weight: bold;   
+}
+
 nav ul {
-    display: block;
     background-color: #E04A4A;
     padding: 20px;
     list-style: none;
@@ -71,22 +93,54 @@ nav ul {
     
  }
 
- #title-cover {
-   display: flex;
-   align-items: center;
-   justify-content: center;
-   flex: wrap;
-   max-width: 500px;
-   height: auto;
-   width: auto;
-   margin: auto;
-   /*object-fit: scale-down;*/
+ /* -- Dropdown Menu -- */
+
+.dropbtn {
+   background-color: #E04A4A;
+   color: #E04A4A;
+   font-size: 15px;
+   border: none;
+   cursor: pointer;
+   font-family: 'Delius Unicase';
+   text-decoration-color: #003B5A;
+  /* text-shadow: 1px 1px rgb(57 57 62 / 72%);*/
+   font-weight:900;
  }
+ 
+ .dropdown {
+   position: relative;
+   display: inline-block;
+ }
+ 
+ .dropdown-content {
+   display: none;
+   position: absolute;
+   background-color: #E04A4A;
+   min-width: 160px;
+   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+   z-index: 1;
+ }
+ 
+ /* Links inside the dropdown */
+ .dropdown-content a {
+   color: #003B5A;
+   padding: 12px 16px;
+   text-decoration: none;
+   display: block;
+ }
+ 
+ .dropdown-content a:hover {background-color: #eee5d5}
+ 
+ .dropdown:hover .dropdown-content {
+   display: block;
+ }
+ 
 
 
-img {
+
+/* img {
    max-width: 100%;
-}
+} */
 
 
 /* COUNTRY PAGES */
@@ -115,7 +169,8 @@ section ul {
    flex: wrap;
 }*/
 
-/* Below Image side by Text */
+
+/* -- Image Beside Text -- */
 
 .text {
    width: 100%;
@@ -135,7 +190,7 @@ section ul {
  }
 
 
-/*  Blurb  */
+/*  -- Blurb -- */
 
  .text {
    width: 60%;
@@ -146,7 +201,7 @@ section ul {
    color:#003B5A;
    /*border: 1px black solid;*/
    font-size: 30px;
-   padding-left: 20px;
+   padding-left: 40px;
    text-align: left;
    font-style: normal;
    margin-left: none;
@@ -162,11 +217,11 @@ section ul {
 }
 
 
-/*  Text Overlay on Image  */
+/* -- Text Overlay on Image -- */
 
 .hover-img {
    background-color: #000;
-   color: #fff;
+   color: #eee5d5;
    display: inline-block;
    margin: 8px;
    /*max-width: 320px;
@@ -174,7 +229,7 @@ section ul {
    overflow: hidden;
    position: relative;
    text-align: center;
-   width: 100%;
+   width: 91%;
  }
  
  .hover-img * {
@@ -225,8 +280,8 @@ section ul {
    font-family: 'Delius Unicase';
    font-weight: 400;
    letter-spacing: 1px;
-   text-transform: uppercase;
-   color: #dce1e4;
+   text-transform: none;
+   color: #eee5d5;
  }
  
  .hover-img:hover::before,
@@ -255,22 +310,47 @@ section ul {
 
 /* -- PHOTO GALLERY -- */
 
-.container {
+/* -- Gallery in Destinations Page -- */
+
+#directory {
    display: flex;
    flex-wrap: wrap;
    align-items: flex-start;
    flex-direction: row;
-   max-height: 40vh;
+   padding: auto;
+   justify-content: space-around;
+   justify-items: center;
+}
+
+#keychain-directory .hover-img{
+   overflow: hidden;
+   float: center;
+   width: 300px;
+   height: 300px;
+   object-fit: cover;
+}
+
+/* -- Gallery in Country Pages */
+
+#gallery {
+   display: flex;
+   flex-wrap: wrap;
+   align-items: flex-start;
+   flex-direction: row;
+   max-height: auto;
    padding: 60px 40px;
+   justify-content: space-around;
 }
 
 .container img {
    margin: 10px;
-   border: 2px solid #434A54;
+   border: 2px solid #171a1e;
    box-shadow: 3px 3px 8px 0px rgba(0,0,0,0.3); 
    max-width: 40vw;
    justify-items: center;
 }
+
+/* -- Year divider -- */
 
 .gallery-title {
    color: #003B5A;
@@ -288,6 +368,7 @@ table th, td {
        font-size: 0.7em;
        min-width: 100%;
        text-align: center;
+       
 }
 
 table, th {
@@ -302,15 +383,41 @@ table, tbody {
    font-family: 'Reenie Beanie';
    border: 3px solid #730202;
    background-color: #dce1e4;
-   color:#434A54;
+   color:#171a1e;
+}
+
+table {
+   justify-content: center;
+   margin: 60px;
+   margin-top: 20px;
+   margin-bottom: 20px;
 }
 
 
-/* -- FOOTER -- does this need to be on every page? */
+/* -- FOOTER -- */
 
- footer {
-    font-size: 30px;
-    color:#434A54;
+footer {
+   color: #171a1e;
+   font-size: 25px;
+   left: 0;
+   position: relative;
+   text-align: left;
+   width:100%;
+   margin-top: auto;
+   margin-bottom: 20px;
+   min-height: 100%;
+   height: 2.54rem;
+   display: flex;
+}
+
+footer2 {
+   display: flex;
+   font-size: 15px;
+   left: 0;
+   bottom: 0;
+   position: relative;
+   text-align: left;
+   width:100%;
  }
 
 
