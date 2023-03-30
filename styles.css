@@ -204,8 +204,8 @@ section ul {
    padding-left: 40px;
    text-align: left;
    font-style: normal;
-   margin-left: none;
-   margin-right: auto;
+   margin-left: 0;
+   margin-right: 0;
    text-align: left;
    width: 50%;
 }
@@ -317,14 +317,14 @@ section ul {
    flex-wrap: wrap;
    align-items: flex-start;
    flex-direction: row;
-   padding: auto;
+   padding: 0;
    justify-content: space-around;
    justify-items: center;
 }
 
 #keychain-directory .hover-img{
    overflow: hidden;
-   float: center;
+   /*float: center;*/
    width: 300px;
    height: 300px;
    object-fit: cover;
@@ -337,7 +337,7 @@ section ul {
    flex-wrap: wrap;
    align-items: flex-start;
    flex-direction: row;
-   max-height: auto;
+   max-height: 100%;
    padding: 60px 40px;
    justify-content: space-around;
 }
